@@ -42,8 +42,8 @@ namespace ResizeImage.Test
 				Directory.CreateDirectory(directoryResults);
 
 				using var image = new Bitmap(System.Drawing.Image.FromFile(filePath));
-				using var bitmapImage = ImageHelper.ResizeImage(image, Width, Height);
-				bitmapImage.Save($"{directoryResults}\\{Path.GetFileNameWithoutExtension(filePath)}_{Postfix}.{formatToConvert}", formatToConvert);
+				using var resizedImage = ImageHelper.ResizeImage(image, Width, Height);
+				resizedImage.Save($"{directoryResults}\\{Path.GetFileNameWithoutExtension(filePath)}_{Postfix}.{formatToConvert}", formatToConvert);
 			}
 			Assert.True(true);
 		}
@@ -59,8 +59,8 @@ namespace ResizeImage.Test
 				Directory.CreateDirectory(directoryResults);
 
 				using var image = new Bitmap(System.Drawing.Image.FromFile(filePath));
-				using var bitmapImage = ImageHelper.ResizeImage(image, Width, ResizeMode.Horizontal);
-				bitmapImage.Save($"{directoryResults}\\{Path.GetFileNameWithoutExtension(filePath)}_{Postfix}.{formatToConvert}", formatToConvert);
+				using var resizedImage = ImageHelper.ResizeImage(image, Width, ResizeMode.Horizontal);
+				resizedImage.Save($"{directoryResults}\\{Path.GetFileNameWithoutExtension(filePath)}_{Postfix}.{formatToConvert}", formatToConvert);
 			}
 			Assert.True(true);
 		}
@@ -76,8 +76,8 @@ namespace ResizeImage.Test
 				Directory.CreateDirectory(directoryResults);
 
 				using var image = new Bitmap(System.Drawing.Image.FromFile(filePath));
-				using var bitmapImage = ImageHelper.ResizeImage(image, Width, ResizeMode.Vertical);
-				bitmapImage.Save($"{directoryResults}\\{Path.GetFileNameWithoutExtension(filePath)}_{Postfix}.{formatToConvert}", formatToConvert);
+				using var resizedImage = ImageHelper.ResizeImage(image, Width, ResizeMode.Vertical);
+				resizedImage.Save($"{directoryResults}\\{Path.GetFileNameWithoutExtension(filePath)}_{Postfix}.{formatToConvert}", formatToConvert);
 			}
 			Assert.True(true);
 		}
